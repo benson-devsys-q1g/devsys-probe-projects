@@ -1,0 +1,19 @@
+name: verify
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    name: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Verify synthetic fixture identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REPOSITORY" = "benson-devsys-q1g/devsys-probe-projects"
+          test -n "$GITHUB_SHA"
+          printf '%s\n' 'DEVSYS_P1_SYNTHETIC_VERIFY=PASS'
