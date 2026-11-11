@@ -1,0 +1,23 @@
+{
+  "schema_label": "devsys-fv1-2-checkpoint-v1",
+  "task_id": "FV1-2-20261111",
+  "source_base_sha": "c95b4a0ae569c313690881880d01c3e57bec55f0",
+  "work_ref": "refs/heads/claude/fv1-2-20261111",
+  "implementation_sha256": "6f4461cc6f7433533c71d2187c07fb5f355e73c7e40925e8013f415c356f6c01",
+  "tests_sha256": "a6c065678e3f6f18bbb5d838fa080d7014f666b33d9be841f257b4bdd3f02ae9",
+  "test_command": "cd qualification/fv1_2 && python3 -B -m unittest -v test_windows",
+  "test_result": "Executed locally pre-commit on Python 3.13.18: Ran 22 tests, OK",
+  "review_note": "Exact-type checks (type(x) in (list, tuple)) wrongly rejected list/tuple subclasses at the container level; use isinstance for containers but keep type(x) is int for coordinates so bool stays rejected. Reject-only tests (bad containers, bool, float) pass either way and cannot detect this defect; a positive subclass-acceptance test is needed.",
+  "limitations": [
+    "Mutation checks NOT_RERUN after the repair; earlier ad hoc mutant runs are historical only and no mutant tests are embedded in test_windows.py",
+    "Error precedence across multiple invalid windows follows input order",
+    "int subclasses are rejected by design; list/tuple subclasses are accepted",
+    "Local pre-publication result only; no remote state observed"
+  ],
+  "cleanup_owned_objects": [
+    "qualification/fv1_2/ (4 files)",
+    "local branch claude/fv1-2-20261111",
+    "native memory fv1-2-handoff.md and one MEMORY.md link (phase B, not yet created)"
+  ],
+  "next_action": "External Work independently tests and may give a hash-bound release for one commit and one non-force push"
+}
