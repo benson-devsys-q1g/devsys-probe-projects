@@ -1,0 +1,42 @@
+{
+  "task_id": "DEVSYS-D3-local-phase",
+  "checkpoint_kind": "SUPPLEMENTARY_POST_REVIEW (does not replace CHECKPOINT.json)",
+  "authorized_by": "DEVSYS-D4-1 local evidence reconciliation",
+  "status": "LOCAL_REVIEW_PASS_WITH_LIMITS",
+  "git_backed": false,
+  "persistence_label": "NOT_SAVED",
+  "predecessor": {"path": "CHECKPOINT.json", "bytes": 1279, "sha256": "2f71f2baf7a06873cc7fa1b36ba4fe33f6642c0c9cdcbdacbe3c3e3dc7c9c7be", "stale_status": "predecessor still says phase REVIEW_PENDING and reviewer 0/1 consumed; superseded by this file for status only, left unchanged"},
+  "repository": "benson-devsys-q1g/devsys-probe-projects",
+  "repository_id": 1452898408,
+  "base_commit": "c95b4a0ae569c313690881880d01c3e57bec55f0",
+  "target_ref": "claude/d3-personal-profile-reference",
+  "target_ref_exists_at_preflight": false,
+  "original_files": {
+    "PROJECT_INSTRUCTIONS.md": {"bytes": 10403, "sha256": "2e63b048d9acd04a40f0de8257c7dcfd868606dad1f278648e321b61cab2c3c9"},
+    "REFERENCE_MANIFEST.json": {"bytes": 1058, "sha256": "7e3d90e7c72e0854b157d52d064f1a5f5b8e34f782e73ae2f472823c0543df42"},
+    "VERIFICATION.md": {"bytes": 3083, "sha256": "00591c1d3dce9403b6efb19d0d855d0ea8493555ec23b3c73e899ca784ad0f72"},
+    "CHECKPOINT.json": {"bytes": 1279, "sha256": "2f71f2baf7a06873cc7fa1b36ba4fe33f6642c0c9cdcbdacbe3c3e3dc7c9c7be"}
+  },
+  "phase": "LOCAL_REVIEW_COMPLETE",
+  "budgets": {"writer": {"authorized": 1, "consumed": 1}, "reviewer": {"authorized": 1, "consumed": 1}, "git_writes": {"authorized": 0, "consumed": 0}},
+  "completed": ["preflight gates", "four candidate files assembled", "writer tests executed", "inline Base64 transfer attempted once and stopped by a safety check", "same-session read-only subagent review completed", "D4-1 preflight and this supplementary checkpoint"],
+  "verified": {
+    "writer_tests": "12/12 passed (T1-T7, N1-N5), executed by writer",
+    "reviewer": "fresh read-only subagent in the writer's execution environment independently computed all four lengths/hashes (matching), re-ran mutation, CRLF, truncation, BOM and planted-token controls, found no blocking issues; did not itself re-run T2 against the original attachment",
+    "post_review_rehash": "all four original files matched the accepted hashes at D4-1 preflight and were unmodified"
+  },
+  "reviewer_findings": {
+    "O1": "low: manifest does not hash itself; its hash 7e3d90e7...df42 is recorded only outside the manifest (in reports and this file)",
+    "O2": "low: post-assembly checks were reported outside VERIFICATION.md; reviewer re-ran them and they passed",
+    "O3": "info: preflight claims (environment ID, GitHub identity, ls-remote output) not checkable from the files; environment display name not observed by writer or reviewer; source binding by hash only"
+  },
+  "incidents": ["Base64 inline transfer was blocked by a safety check; not retried, no variants attempted; owner designated this a hard stop for that transport"],
+  "remaining_gaps": {
+    "remote_persistence": "nothing committed or pushed; files exist only in one session's local scratch directory and may be lost or unreachable",
+    "security": "reviewer shares writer's execution environment; no third-party or separate-credential assurance",
+    "environment_provenance": "environment_id observed via get_session; display name devsys-v1-candidate owner-verified only; startup provenance unverified",
+    "recovery": "no remote locator; a successor cannot recover without access to this scratch directory; reviewer scratch /tmp/d3-review-scratch retained, not cleaned"
+  },
+  "next": "Owner decision on any commit/push/PR (each separately authorized); D4-2 per owner",
+  "limitations": ["Not Git-backed", "Skill invocation unverified", "This file cannot contain its own hash; hash reported externally"]
+}

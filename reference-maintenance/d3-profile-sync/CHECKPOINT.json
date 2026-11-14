@@ -1,0 +1,18 @@
+{
+  "task_id": "DEVSYS-D3-local-phase",
+  "status": "LOCAL_ARTIFACT_ONLY",
+  "git_backed": false,
+  "persistence_label": "NOT_SAVED",
+  "repository": "benson-devsys-q1g/devsys-probe-projects",
+  "repository_id": 1452898408,
+  "base_commit": "c95b4a0ae569c313690881880d01c3e57bec55f0",
+  "target_ref": "claude/d3-personal-profile-reference",
+  "target_ref_exists_at_preflight": false,
+  "phase": "REVIEW_PENDING",
+  "completed": ["preflight gates", "four candidate files assembled", "writer tests and negative controls executed"],
+  "verified": ["source 10403 bytes and approved SHA-256", "byte-identical copy", "LF only", "no secret patterns", "negative controls detect mutation, CRLF, truncation, planted token"],
+  "remaining": ["sequential independent review", "publication decision package", "DEVSYS_D3_PILOT_RETURN_AND_GAP_CLOSURE"],
+  "next": "Fresh reviewer independently re-hashes and inspects files; no commit/push/PR authorized",
+  "budgets": {"writer": {"authorized": 1, "consumed": 1}, "reviewer": {"authorized": 1, "consumed": 0}, "git_writes": {"authorized": 0, "consumed": 0}},
+  "limitations": ["Not Git-backed", "Local scratch location may not be reachable by a fresh session", "Skill invocation unverified", "Environment display name not observed by writer"]
+}

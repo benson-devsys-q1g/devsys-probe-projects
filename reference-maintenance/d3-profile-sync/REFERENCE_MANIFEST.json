@@ -1,0 +1,30 @@
+{
+  "task_id": "DEVSYS-D3-local-phase",
+  "repository": "benson-devsys-q1g/devsys-probe-projects",
+  "repository_id": 1452898408,
+  "base_commit": "c95b4a0ae569c313690881880d01c3e57bec55f0",
+  "target_ref": "claude/d3-personal-profile-reference",
+  "expected_parent": "c95b4a0ae569c313690881880d01c3e57bec55f0",
+  "status": "LOCAL_ARTIFACT_ONLY",
+  "git_backed": false,
+  "source": {
+    "name": "DEVSYS_D2_Project_Instructions_v0.2.0.md",
+    "bytes": 10403,
+    "sha256": "2e63b048d9acd04a40f0de8257c7dcfd868606dad1f278648e321b61cab2c3c9"
+  },
+  "files": {
+    "PROJECT_INSTRUCTIONS.md": {
+      "bytes": 10403,
+      "sha256": "2e63b048d9acd04a40f0de8257c7dcfd868606dad1f278648e321b61cab2c3c9"
+    },
+    "VERIFICATION.md": {
+      "bytes": 3083,
+      "sha256": "00591c1d3dce9403b6efb19d0d855d0ea8493555ec23b3c73e899ca784ad0f72"
+    },
+    "CHECKPOINT.json": {
+      "bytes": 1279,
+      "sha256": "2f71f2baf7a06873cc7fa1b36ba4fe33f6642c0c9cdcbdacbe3c3e3dc7c9c7be"
+    }
+  },
+  "note": "Manifest does not hash itself; its hash is reported externally."
+}
