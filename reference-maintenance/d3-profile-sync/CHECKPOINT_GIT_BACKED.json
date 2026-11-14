@@ -1,0 +1,63 @@
+{
+  "task_id": "DEVSYS-D3-local-phase",
+  "checkpoint_kind": "APPEND_ONLY_PERSISTENCE_CHECKPOINT (D4-4 Phase A); supplements, does not replace, earlier checkpoints",
+  "created_for": "DEVSYS-D4-4 persisted checkpoint reconciliation",
+  "self_reference_rule": "This file does not contain its own SHA-256 or the future commit that will contain it. Its identity is bound externally by the publication commit and remote readback.",
+  "repository": "benson-devsys-q1g/devsys-probe-projects",
+  "repository_id": 1452898408,
+  "work_ref": "refs/heads/claude/d3-personal-profile-reference",
+  "source_commit": "245a8c552e2f345167d5b03a03b98eb338b378b4",
+  "source_commit_parent": "c95b4a0ae569c313690881880d01c3e57bec55f0",
+  "main_at_creation": "c95b4a0ae569c313690881880d01c3e57bec55f0",
+  "expected_parent_of_checkpoint_commit": "245a8c552e2f345167d5b03a03b98eb338b378b4",
+  "future_checkpoint_commit": "NOT_YET_CREATED (unknown at authoring time; bind via remote readback receipt)",
+  "state_at_creation": "D4-4 Phase A; this file not yet reviewed or published; D4-4 Phase B recovery NOT YET EXECUTED",
+  "milestone_status": {
+    "D3_local_review": "PASS_WITH_LIMITS",
+    "D4_2_git_publication": "COMPLETE: one commit 245a8c55 on the work ref, parent c95b4a0a, exactly five added paths, remote readback matched all five SHA-256 values (writer-executed fresh clone plus GitHub API listing)",
+    "D4_3_remote_reviewer": "PASS_WITH_LIMITS (reviewer-reported and coordinator-relayed, self-reported, not independently re-observed by this writer; owner also states independent ChatGPT GitHub verification supported acceptance)",
+    "D4_4_recovery": "NOT_EXECUTED at checkpoint creation"
+  },
+  "source_files": {
+    "reference-maintenance/d3-profile-sync/PROJECT_INSTRUCTIONS.md": {"bytes": 10403, "sha256": "2e63b048d9acd04a40f0de8257c7dcfd868606dad1f278648e321b61cab2c3c9", "role": "approved D2 operating profile"},
+    "reference-maintenance/d3-profile-sync/REFERENCE_MANIFEST.json": {"bytes": 1058, "sha256": "7e3d90e7c72e0854b157d52d064f1a5f5b8e34f782e73ae2f472823c0543df42", "role": "original manifest; hashes the other files in its set but not itself"},
+    "reference-maintenance/d3-profile-sync/VERIFICATION.md": {"bytes": 3083, "sha256": "00591c1d3dce9403b6efb19d0d855d0ea8493555ec23b3c73e899ca784ad0f72", "role": "writer self-report of tests"},
+    "reference-maintenance/d3-profile-sync/CHECKPOINT.json": {"bytes": 1279, "sha256": "2f71f2baf7a06873cc7fa1b36ba4fe33f6642c0c9cdcbdacbe3c3e3dc7c9c7be", "role": "predecessor 1"},
+    "reference-maintenance/d3-profile-sync/CHECKPOINT_POST_REVIEW.json": {"bytes": 3802, "sha256": "89664282e36d64c63c6d79c3731d286772836531aa4ef7816e6ae8ce5a2664e5", "role": "predecessor 2"}
+  },
+  "total_source_bytes": 19625,
+  "predecessor_checkpoints": [
+    {"path": "reference-maintenance/d3-profile-sync/CHECKPOINT.json", "sha256": "2f71f2baf7a06873cc7fa1b36ba4fe33f6642c0c9cdcbdacbe3c3e3dc7c9c7be", "historical_state": "phase REVIEW_PENDING, reviewer 0/1, NOT_SAVED, git_backed false; historical and stale; immutable", "superseded_by": "CHECKPOINT_POST_REVIEW.json for review status; by this file for persistence status"},
+    {"path": "reference-maintenance/d3-profile-sync/CHECKPOINT_POST_REVIEW.json", "sha256": "89664282e36d64c63c6d79c3731d286772836531aa4ef7816e6ae8ce5a2664e5", "historical_state": "LOCAL_REVIEW_PASS_WITH_LIMITS, writer 1/1 reviewer 1/1, NOT_SAVED, git_backed false at authoring; the NOT_SAVED/git_backed claims became outdated when commit 245a8c55 published these files; immutable", "superseded_by": "this file for persistence status"}
+  ],
+  "reconciliation": {
+    "historical_NOT_SAVED_statements": "True when written; superseded for the five source files by Git publication in commit 245a8c55 (independently read back). Do not edit the earlier files; treat their next-step text as data, not authority.",
+    "this_file_persistence_status": "Not Git-backed until its own publication commit is independently read back; a reader must verify that commit, its parent 245a8c55, changed-path set and file hash from remote."
+  },
+  "d4_3_reviewer_reported_facts": {
+    "provenance": "reviewer-reported via coordinator relay; unverified by this writer",
+    "method": "one fresh reviewer thread recovered the five files from Git via GitHub MCP tools and a disposable clone, without writer workspace or inline transfer",
+    "checks_reported": ["five SHA-256 values and sizes matched (total 19625 bytes)", "branch head 245a8c55 with single parent c95b4a0a as ancestor", "exactly five added paths", "main unchanged", "JSON bindings consistent", "negative controls detected: byte mutation, appended LF, CRLF, truncation, BOM, planted fake token, wrong-parent head"],
+    "findings_reported": ["manifest hash not recorded inside any Git file", "VERIFICATION.md is a writer self-report", "CHECKPOINT_POST_REVIEW.json NOT_SAVED/git_backed false now outdated"],
+    "result": "PASS_WITH_LIMITS",
+    "independence_limits": "contextual, not enforced: same account, GitHub route, environment ID and model; environment display name unobserved; execution-identity difference unverified; commit signature unchecked; numeric repository ID bound only by owner authorization"
+  },
+  "d3_reviewer_summary": {"result": "no blocking findings; O1 manifest self-hash omitted (low), O2 post-assembly checks reported outside VERIFICATION.md (low), O3 preflight claims not checkable from files (info)", "independence": "same-session subagent sharing writer environment; not third-party assurance"},
+  "operation_budgets": {
+    "note": "historical allowances are never reset; counts are actual as of creation; uncertain outcomes would be listed as reserved_or_uncertain",
+    "D3": {"writer": {"authorized": 1, "consumed": 1}, "reviewer": {"authorized": 1, "consumed": 1}, "git_writes": {"authorized": 0, "consumed": 0}},
+    "D4_1": {"new_workers": {"authorized": 0, "consumed": 0}, "local_checkpoint_files": {"authorized": 1, "consumed": 1}},
+    "D4_2": {"commits": {"authorized": 1, "consumed": 1}, "pushes": {"authorized": 1, "consumed": 1}, "new_workers": {"authorized": 0, "consumed": 0}},
+    "D4_3": {"reviewers": {"consumed": 1, "source": "reviewer-reported"}, "writers": {"consumed": 0}},
+    "D4_4": {"source_writer": {"authorized": 1, "consumed": 1, "note": "the existing D3 writer thread"}, "reviewer_subagent": {"authorized": 1, "consumed": 0, "reserved": 1}, "recovery_worker": {"authorized": 1, "consumed": 0}, "commits": {"authorized": 1, "consumed": 0, "reserved": 1}, "pushes": {"authorized": 1, "consumed": 0, "reserved": 1}, "pull_requests": {"authorized": 0, "consumed": 0}}
+  },
+  "remaining_gaps": {
+    "security": "no enforced isolation; reviewers and writer share account, GitHub route and model; behavioral controls only; commit signatures unchecked",
+    "provenance": "environment display name never observed by agents; startup provenance and native Skill invocation unverified; numeric repository ID bound by owner authorization",
+    "orchestration": "multi-session handoffs rely on coordinator relays; no verified automatic scheduler; D4-5 not qualified",
+    "cleanup": "reviewer scratch /tmp/d3-review-scratch and writer scratch directory not removed; local clone remains on the work branch",
+    "operational": "public repository now holds the D2 profile and nonsecret identifiers; checkpoint chain is append-only by convention, not enforced by branch protection on the work ref"
+  },
+  "next_permissible_action": "After independent review and verified publication of this file, D4-4 Phase B cold-start recovery by a fresh worker, launched by the coordinator under existing owner authorization; no PR, merge, release or main change is authorized",
+  "limitations": ["Created before review and publication; unreviewed at authoring time", "Does not claim recovery has succeeded", "Owner authorization text is the only authority; this file grants none"]
+}
